@@ -43,3 +43,27 @@ try {
 
 console.log("deposit tests complete.");
 
+
+console.log("Testing withdraw");
+
+bank.withdraw("12341234", 25);
+if (account.balance === 25) {
+    console.log("Scenario 5 passed")
+} else {
+    console.log("Scenario 5 failed");
+}
+try {
+    bank.withdraw("12341234", -1)
+    console.log("Scenario 6 failed");
+} catch(_) {
+    console.log("Scenario 6 passed")
+}
+
+try {
+    bank.withdraw("abc", 10)
+    console.log("Scenario 7 failed");
+} catch(_) {
+    console.log("Scenario 7 passed")
+}
+
+console.log("withdraw tests complete.");
