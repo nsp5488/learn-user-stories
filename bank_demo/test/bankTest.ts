@@ -67,3 +67,19 @@ try {
 }
 
 console.log("withdraw tests complete.");
+
+console.log("Testing check balance");
+let balance = bank.checkBalance("12341234");
+if (balance == 25) {
+    console.log("Scenario 8 passed");
+} else {
+    console.log("Scenario 8 failed");
+}
+try {
+    bank.checkBalance('abc')
+    console.log("Scenario 9 failed");
+} catch(_) {
+    console.log("Scenario 9 passed");
+}
+
+console.log("Check balance tets complete")
